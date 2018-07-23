@@ -56,6 +56,8 @@ public class Settings extends AppCompatActivity {
 
         spnPreference =  findViewById(R.id.spnPreference);
 
+        spnPreference.setVisibility(View.INVISIBLE);
+
         //Load the list of airshows
         //LoadAirshows.run();
 
@@ -63,7 +65,7 @@ public class Settings extends AppCompatActivity {
 
         //Set adapter for spinner
         ArrayAdapter<String> AirshowAdapter = new ArrayAdapter<>(this, R.layout.spinner, Airshows);
-        spnPreference.setAdapter(AirshowAdapter);
+        //spnPreference.setAdapter(AirshowAdapter);
 
         //Checks if setting file is a file and loads it if it is
         Settings = new File(getCacheDir()+"/SettingsStore");
@@ -76,7 +78,7 @@ public class Settings extends AppCompatActivity {
             {
                 FileInputStream fis = new FileInputStream(Settings);
                 ObjectInputStream ois = new ObjectInputStream(fis);
-                strPreference = (String) ois.readObject();
+                strPreference =  String.valueOf(ois.readObject());
                 boolean boolNotificationsActive = (boolean)ois.readObject();
                 swtNotifications.setChecked(boolNotificationsActive);
                 Storage.setNotificationsActive(boolNotificationsActive);
@@ -100,7 +102,7 @@ public class Settings extends AppCompatActivity {
         {
             if (strAirshow.equals(strPreference))
             {
-                spnPreference.setSelection(i);
+                //spnPreference.setSelection(i);
                 break;
             }
             i++;
@@ -109,7 +111,7 @@ public class Settings extends AppCompatActivity {
 
 
         //Set the on item selected listener for the spinner
-        spnPreference.setOnItemSelectedListener(AirshowSelect);
+        ////spnPreference.setOnItemSelectedListener(AirshowSelect);
 
     }
 
@@ -166,10 +168,10 @@ public class Settings extends AppCompatActivity {
         try {
             //SQL.LoadSelected(spnPreference.getSelectedItem().toString());
 
-            database.StoreInfo(database.getAirshowInfo(spnPreference.getSelectedItem().toString()));
+           // database.StoreInfo(database.getAirshowInfo(spnPreference.getSelectedItem().toString()));
             FileOutputStream fos = new FileOutputStream(Settings);
             ObjectOutputStream oos = new ObjectOutputStream(fos);
-            oos.writeObject(spnPreference.getSelectedItem().toString());
+            oos.writeObject("Offutt Air & Space Show");
             oos.writeObject(swtNotifications.isChecked());
             oos.close();
             fos.close();

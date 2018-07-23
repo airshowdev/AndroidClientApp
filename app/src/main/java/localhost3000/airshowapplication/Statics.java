@@ -147,10 +147,21 @@ public class Statics extends AppCompatActivity {
         @Override
         public void onClick(View v) {
 
-            Intent attractionDisplay = new Intent(con, AttractionDisplay.class);
-            attractionDisplay.putExtra("Name", ((Button) v).getText() );
-            attractionDisplay.putExtra("Type", "Static");
-            startActivity(attractionDisplay);
+            if (v instanceof Button) {
+                Intent attractionDisplay = new Intent(con, AttractionDisplay.class);
+                attractionDisplay.putExtra("Name", ((Button) v).getText());
+                attractionDisplay.putExtra("Type", "Static");
+                startActivity(attractionDisplay);
+            } else if (v instanceof ImageButton) {
+                LinearLayout ll = (LinearLayout) v.getParent();
+                for (int i = 0; i < ll.getChildCount(); i++) {
+                    if (ll.getChildAt(i) instanceof Button) {
+                        Button b = (Button) ll.getChildAt(i);
+                        b.setOnClickListener(DisplayAttraction);
+                        b.callOnClick();
+                    }
+                }
+            }
         }
     };
 }

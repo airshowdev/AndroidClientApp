@@ -7,36 +7,13 @@
     tools:context="localhost3000.airshowapplication.Settings"
     android:background="@color/cardview_dark_background">
 
-    <TextView
-        android:id="@+id/txtPreference"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Airshow Preference"
-        android:textSize="25sp"
-        android:textColor="@color/White"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginBottom="8dp"
-        android:layout_marginStart="8dp"
-        android:gravity="start"
-        />
-
     <Spinner
         android:id="@+id/spnPreference"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="3dp"
-        app:layout_constraintTop_toBottomOf="@id/txtPreference"
         app:layout_constraintStart_toStartOf="parent"
-        />
-
-    <View
-        android:id="@+id/line2"
-        android:layout_height="2dp"
-        android:layout_width="match_parent"
-        android:background="@color/White"
-        app:layout_constraintTop_toBottomOf="@id/spnPreference"
-        app:layout_constraintStart_toStartOf="parent"/>
+        tools:layout_editor_absoluteY="34dp" />
 
     <TextView
         android:id="@+id/txtNotifications"
@@ -44,7 +21,7 @@
         android:layout_height="wrap_content"
         android:text="Notifications Off"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/line2"
+        app:layout_constraintTop_toTopOf="parent"
         android:layout_marginStart="8dp"
         android:paddingTop="3dp"
         android:textSize="25sp"
@@ -63,7 +40,7 @@
         android:textSize="25sp"
         style="@style/SwitchTheme"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/line2"
+        app:layout_constraintTop_toTopOf="parent"
         />
 
 
