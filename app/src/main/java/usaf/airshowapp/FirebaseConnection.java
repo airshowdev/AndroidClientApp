@@ -1,4 +1,4 @@
-package localhost3000.airshowapplication;
+package usaf.airshowapp;
 
 import android.util.Log;
 
@@ -23,6 +23,8 @@ import java.util.List;
 
 public class FirebaseConnection {
 
+    File json = new File(SplashPage.getCache() + "/database.json");
+
 
     static Database database = null;
     private String jsonString;
@@ -30,7 +32,7 @@ public class FirebaseConnection {
     public FirebaseConnection() {
         try {
             URL jsonUrl = new URL("https://airshowapp-d193b.firebaseio.com/.json");
-            File json = new File(SplashPage.getCache() + "/database.json");
+
             if (!json.exists()) {
                 json.createNewFile();
             }
@@ -83,8 +85,33 @@ public class FirebaseConnection {
         return Names;
     }
 
-    public Database getDatabase()
-    {
+    public Database getDatabase() {
+        try{
+        char[] buf = new char[1024];
+
+        int numbread = 0;
+
+        StringBuffer buffer = new StringBuffer();
+        BufferedReader br = new BufferedReader(new FileReader(json));
+        while ((numbread = br.read(buf)) != -1) {
+            String data = String.valueOf(buf, 0, numbread);
+            Log.d("Data Read", data);
+            buffer.append(data);
+        }
+        br.close();
+        jsonString = buffer.toString();
+
+
+            ObjectMapper mapper = new ObjectMapper();
+            mapper.setVisibility(PropertyAccessor.FIELD, JsonAutoDetect.Visibility.ANY);
+            mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+            database = mapper.readValue(jsonString, Database.class);
+
+            Log.d("JSON", jsonString);
+
+        } catch (Exception E) {
+            E.printStackTrace();
+        }
         return database;
     }
 

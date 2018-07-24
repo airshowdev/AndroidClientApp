@@ -1,4 +1,4 @@
-package localhost3000.airshowapplication;
+package usaf.airshowapp;
 
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;

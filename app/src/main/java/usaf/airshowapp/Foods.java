@@ -1,4 +1,4 @@
-package localhost3000.airshowapplication;
+package usaf.airshowapp;
 
 import android.content.Context;
 import android.content.Intent;

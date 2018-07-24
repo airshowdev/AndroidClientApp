@@ -3,12 +3,9 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#76ff03</color>
-    <color name="Black">#000000</color>
     <color name="LightGray">#EEEEEE</color>
-    <color name="Test">#9900FF</color>
     <color name="White">#FFFFFF</color>
     <color name="Silver">#FAFAFA</color>
     <color name="CardDark">#424242</color>
     <color name="Transparent">#00000000</color>
-    <color name="Blue">#3F51B5</color>
 </resources>

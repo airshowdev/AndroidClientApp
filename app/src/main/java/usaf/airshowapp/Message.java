@@ -1,4 +1,4 @@
-package localhost3000.airshowapplication;
+package usaf.airshowapp;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

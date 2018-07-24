@@ -19,13 +19,11 @@
             >
 
             <android.support.design.widget.TabItem
-                android:id="@+id/BikePark"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Driving"/>
 
             <android.support.design.widget.TabItem
-                android:id="@+id/CarPark"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Bike-n-Park"/>

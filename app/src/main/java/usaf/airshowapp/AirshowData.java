@@ -1,4 +1,4 @@
-package localhost3000.airshowapplication;
+package usaf.airshowapp;
 //Imports
 
 import android.content.Context;
@@ -81,14 +81,14 @@ public class AirshowData extends AppCompatActivity {
     View.OnClickListener Schedule = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-            Intent Schedule = new Intent(conThis, localhost3000.airshowapplication.Schedule.class);
+            Intent Schedule = new Intent(conThis, usaf.airshowapp.Schedule.class);
             startActivity(Schedule);
         }
     };
     View.OnClickListener Directions = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-            Intent Direction = new Intent(conThis, localhost3000.airshowapplication.Map.class);
+            Intent Direction = new Intent(conThis, usaf.airshowapp.Map.class);
             startActivity(Direction);
         }
     };
@@ -104,14 +104,14 @@ public class AirshowData extends AppCompatActivity {
     View.OnClickListener FAQ = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-            Intent FAQ = new Intent(conThis, localhost3000.airshowapplication.FAQ.class);
+            Intent FAQ = new Intent(conThis, usaf.airshowapp.FAQ.class);
             startActivity(FAQ);
         }
     };
     View.OnClickListener Prohibited_Items = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-            Intent Prohibited = new Intent(conThis, localhost3000.airshowapplication.Prohibited.class);
+            Intent Prohibited = new Intent(conThis, usaf.airshowapp.Prohibited.class);
             startActivity(Prohibited);
         }
     };
@@ -122,7 +122,7 @@ public class AirshowData extends AppCompatActivity {
             if (!Storage.getSponsors().equals("") && Storage.getSponsors() != null)
                 Sponsor = new Intent("android.intent.action.VIEW", Uri.parse(Storage.getSponsors()));
             else
-                Sponsor = new Intent(conThis, localhost3000.airshowapplication.Sponsors.class);
+                Sponsor = new Intent(conThis, usaf.airshowapp.Sponsors.class);
             startActivity(Sponsor);
         }
     };
@@ -145,7 +145,7 @@ public class AirshowData extends AppCompatActivity {
     View.OnClickListener Settings = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-            Intent Setting = new Intent(conThis, localhost3000.airshowapplication.Settings.class);
+            Intent Setting = new Intent(conThis, usaf.airshowapp.Settings.class);
             startActivity(Setting);
         }
     };

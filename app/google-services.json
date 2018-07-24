@@ -8,6 +8,68 @@
   "client": [
     {
       "client_info": {
+        "mobilesdk_app_id": "1:490784728389:android:5d4cbe8aaf44a4ad",
+        "android_client_info": {
+          "package_name": "com.companyname.AirshowAddmin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "490784728389-01p92ic7a01rehuqopm5jeu0rfn7dihv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC-701_c0ve5u1hHtXo8okBcX3efs7jers"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:490784728389:android:b38ba85d00df504a",
+        "android_client_info": {
+          "package_name": "com.demo.adminandroidairshow"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "490784728389-01p92ic7a01rehuqopm5jeu0rfn7dihv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC-701_c0ve5u1hHtXo8okBcX3efs7jers"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:490784728389:android:b7a66ac0c303794e",
         "android_client_info": {
           "package_name": "localhost3000.airshowapplication"
@@ -42,8 +104,46 @@
             {
               "client_id": "490784728389-01p92ic7a01rehuqopm5jeu0rfn7dihv.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "490784728389-t1kv5s6li3q9s22pbrvjaq63g06bl1h2.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "test.AirshowAdminOS"
+              }
             }
           ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:490784728389:android:e1464cdcf46c7e54",
+        "android_client_info": {
+          "package_name": "usaf.airshowapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "490784728389-01p92ic7a01rehuqopm5jeu0rfn7dihv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC-701_c0ve5u1hHtXo8okBcX3efs7jers"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
         },
         "ads_service": {
           "status": 2

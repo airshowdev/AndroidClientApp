@@ -1,4 +1,4 @@
-package localhost3000.airshowapplication;
+package usaf.airshowapp;
 
 //Imports
 
@@ -205,6 +205,8 @@ public class SplashPage extends AppCompatActivity {
                         }
 
 
+
+
                     } catch (Exception E) {
                         E.printStackTrace();
                         LoadSplashPage();
@@ -217,7 +219,10 @@ public class SplashPage extends AppCompatActivity {
                 LoadSplashPage();
         } else
             LoadSplashPage();
-        LoadSplashPage();
+        if (database!= null)
+        {
+            Airshow("Offutt Air & Space Show", "Preference");
+        }
     }
 
     private void Airshow(String strAirshowName, String Sender) {
@@ -266,7 +271,7 @@ public class SplashPage extends AppCompatActivity {
             btnSelect.setOnClickListener(Select);
         } catch (Exception E) {
             E.printStackTrace();
-            Intent NotLoaded = new Intent(this, localhost3000.airshowapplication.NotLoaded.class);
+            Intent NotLoaded = new Intent(this, usaf.airshowapp.NotLoaded.class);
             startActivity(NotLoaded);
         }
     }

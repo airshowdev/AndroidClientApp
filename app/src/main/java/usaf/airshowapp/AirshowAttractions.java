@@ -1,4 +1,4 @@
-package localhost3000.airshowapplication;
+package usaf.airshowapp;
 
 import android.content.Context;
 import android.content.Intent;
@@ -111,7 +111,7 @@ public class AirshowAttractions extends AppCompatActivity {
     View.OnClickListener Performers = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-            Intent Performers = new Intent(context, localhost3000.airshowapplication.Performers.class);
+            Intent Performers = new Intent(context, usaf.airshowapp.Performers.class);
             startActivity(Performers);
             setContentView(R.layout.layout_loading);
             setTitle("Loading...");
@@ -122,7 +122,7 @@ public class AirshowAttractions extends AppCompatActivity {
     View.OnClickListener Statics = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-            Intent Statics = new Intent(context, localhost3000.airshowapplication.Statics.class);
+            Intent Statics = new Intent(context, usaf.airshowapp.Statics.class);
             startActivity(Statics);
             setContentView(R.layout.layout_loading);
             setTitle("Loading...");

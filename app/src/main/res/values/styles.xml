@@ -8,38 +8,13 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-    <style name="spinnerItemStyle">
-        <item name="android:textSize">50sp</item>
-        <item name="android:textColor">@color/Silver</item>
-    </style>
-
-    <style name="spinnerItemStyle2"></style>
-
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
 
-    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
-
-    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
-
     <style name="SplashTheme" parent="AppTheme">
         <item name="android:windowBackground"> @drawable/splash_screen</item>
-    </style>
-
-    <style name="NotificationsSwitch" parent="Theme.AppCompat.Light">
-        <!-- active thumb & track color (30% transparency) -->
-        <item name="colorControlActivated">#46bdbf</item>
-
-        <!-- inactive thumb color -->
-        <item name="colorSwitchThumbNormal">#f1f1f1
-        </item>
-
-        <!-- inactive track color (30% transparency) -->
-        <item name="android:colorForeground">#42221f1f
-        </item>
-
     </style>
 
     <style name="SwitchTheme" parent="AppTheme" />

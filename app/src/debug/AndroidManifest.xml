@@ -1,6 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <application>
-        <activity android:name="localhost3000.airshowapplication.NotLoaded"></activity>
+        <activity android:name="usaf.airshowapp.NotLoaded"></activity>
     </application>
 </manifest>

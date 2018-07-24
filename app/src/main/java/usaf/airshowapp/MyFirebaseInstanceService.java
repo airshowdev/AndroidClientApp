@@ -1,4 +1,4 @@
-package localhost3000.airshowapplication;
+package usaf.airshowapp;
 
 import android.app.NotificationManager;
 import android.app.PendingIntent;

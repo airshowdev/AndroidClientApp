@@ -1,4 +1,4 @@
-package localhost3000.airshowapplication;
+package usaf.airshowapp;
 
 import android.content.Context;
 import android.content.Intent;
@@ -71,7 +71,7 @@ public class FAQ extends AppCompatActivity {
         @Override
         public void onClick(View view) {
             TextView tv = (TextView) view;
-            Intent QandA = new Intent(context, localhost3000.airshowapplication.QandA.class);
+            Intent QandA = new Intent(context, usaf.airshowapp.QandA.class);
             QandA.putExtra("Question", tv.getText());
             startActivity(QandA);
         }

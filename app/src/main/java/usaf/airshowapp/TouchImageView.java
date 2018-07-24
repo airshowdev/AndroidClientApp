@@ -10,7 +10,7 @@
  * Extends Android ImageView to include pinch zooming, panning, fling and double tap zoom.
  */
 
-package localhost3000.airshowapplication;
+package usaf.airshowapp;
 
 import android.annotation.TargetApi;
 import android.content.Context;
