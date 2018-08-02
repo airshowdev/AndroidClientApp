@@ -72,7 +72,7 @@ public class FirebaseConnection {
 
     public ArrayList<String> getAirshowNames() {
 
-        List<Airshow> airshows;
+        Airshow[] airshows;
         airshows = database.getAirshows();
 
         ArrayList<String> Names = new ArrayList<>();

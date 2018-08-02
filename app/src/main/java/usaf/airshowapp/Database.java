@@ -1,76 +1,46 @@
 package usaf.airshowapp;
 
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import com.fasterxml.jackson.core.JsonGenerator;
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.JsonDeserializer;
-import com.fasterxml.jackson.databind.JsonSerializer;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.SerializerProvider;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.fasterxml.jackson.databind.util.Converter;
 
-import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Map;
 
-@JsonInclude(JsonInclude.Include.NON_NULL)
-@JsonPropertyOrder({
-        "Airshows",
-        "Messages",
-        "Questions"
-})
 public class Database {
+    private Airshow[] airshows;
+    private Map<String, Message> messages;
+    private Question[] questions;
 
     @JsonProperty("Airshows")
-    private static ArrayList<Airshow> airshows = null;
-    @JsonProperty("Questions")
-    private static ArrayList<Question> questions = null;
-    @JsonProperty("Messages")
-    private static ArrayList<Message> messages = null;
-    @JsonIgnore
-    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
-
-    @JsonProperty("Airshows")
-    public ArrayList<Airshow> getAirshows() {
+    public Airshow[] getAirshows() {
         return airshows;
     }
 
     @JsonProperty("Airshows")
-    public void setAirshows(ArrayList<Airshow> airshows) {
-        this.airshows = airshows;
+    public void setAirshows(Airshow[] value) {
+        this.airshows = value;
+    }
+
+    @JsonProperty("Messages")
+    public Map<String, Message> getMessages() {
+        return messages;
+    }
+
+    @JsonProperty("Messages")
+    public void setMessages(Map<String, Message> value) {
+        this.messages = value;
     }
 
     @JsonProperty("Questions")
-    public ArrayList<Question> getQuestions() {
+    public Question[] getQuestions() {
         return questions;
     }
 
     @JsonProperty("Questions")
-    public void setQuestions(ArrayList<Question> questions) {
-        this.questions = questions;
+    public void setQuestions(Question[] value) {
+        this.questions = value;
     }
 
-    @JsonAnyGetter
-    public Map<String, Object> getAdditionalProperties() {
-        return this.additionalProperties;
-    }
-
-    @JsonProperty("Messages")
-    public void setMessages(ArrayList<Message> messages) {
-        this.messages = messages;
-    }
-
-    @JsonAnySetter
-    public void setAdditionalProperty(String name, Object value) {
-        this.additionalProperties.put(name, value);
-    }
 
     public ArrayList<String> getAirshowNames() {
         ArrayList<String> names = new ArrayList<>();
@@ -82,7 +52,7 @@ public class Database {
     }
 
     public Airshow getAirshowInfo(String name) {
-        ArrayList<Airshow> Airshows = getAirshows();
+        Airshow[] Airshows = getAirshows();
 
         for (Airshow air : Airshows) {
             if (air != null) {
@@ -95,8 +65,7 @@ public class Database {
     }
 
     @Override
-    public String toString()
-    {
+    public String toString() {
         ObjectMapper objMap = new ObjectMapper();
         try {
             String json = objMap.writeValueAsString(this);
@@ -128,3 +97,4 @@ public class Database {
     }
 
 }
+

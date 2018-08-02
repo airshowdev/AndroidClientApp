@@ -3,6 +3,7 @@ package usaf.airshowapp;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -40,21 +41,21 @@ public class AttractionDisplay extends AppCompatActivity {
             for (Performer performer : performers) {
                 if (performer != null) {
                     if (performer.getName().equals(attractionName))
-                        attractionDesc = performer.getDescription();
+                        attractionDesc = performer.getDescription() + "\n";
                 }
             }
         } else if (type.equals("Static")) {
             for (Static statc : statics) {
                 if (statc != null) {
                     if (statc.getName().equals(attractionName))
-                        attractionDesc = statc.getDescription();
+                        attractionDesc = statc.getDescription() + "\n";
                 }
             }
         } else if (type.equals("Food")) {
             for (Food food : foods) {
                 if (food != null) {
                     if (food.getName().equals(attractionName))
-                        attractionDesc = food.getDescription();
+                        attractionDesc = food.getDescription() + "\n";
                 }
             }
         }

@@ -411,12 +411,12 @@ public class AirshowInformationStorage {
         selectedAirshow = airshow;
     }
 
-    private static ArrayList<Question> QnAs;
-    public ArrayList<Question> getQnA()
+    private static Question[] QnAs;
+    public Question[] getQnA()
     {
         return QnAs;
     }
-    public void setQnA(ArrayList<Question> Questions)
+    public void setQnA(Question[] Questions)
     {
         QnAs = Questions;
     }

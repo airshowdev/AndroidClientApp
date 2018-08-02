@@ -17,7 +17,7 @@ public class QandA extends AppCompatActivity {
         AirshowInformationStorage Storage = new AirshowInformationStorage();
         Intent in = getIntent();
         //ArrayList<String> Questions = Storage.getQuestions();
-        ArrayList<Question> Questions = Storage.getQnA();
+        Question[] Questions = Storage.getQnA();
         setContentView(R.layout.activity_qand);
         //Set title and display text view
         setTitle("FAQ");
@@ -37,7 +37,7 @@ public class QandA extends AppCompatActivity {
         //Display answer
         TextView Answer = findViewById(R.id.Answer);
         Answer.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
-        Answer.setText(Questions.get(index).getAnswer());
+        Answer.setText(Questions[index].getAnswer());
 
     }
 }

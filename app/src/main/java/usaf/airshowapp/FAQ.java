@@ -31,7 +31,7 @@ public class FAQ extends AppCompatActivity {
 
         //ArrayList<String> Questions = Storage.getQuestions();
 
-        ArrayList<Question> Questions = Storage.getQnA();
+        Question[] Questions = Storage.getQnA();
 
 
         //Declare a layout to put the question text views in

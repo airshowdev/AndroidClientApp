@@ -145,6 +145,49 @@ public class SplashPage extends AppCompatActivity {
 
         database = fbCon.getDatabase();
 
+        if (databseFile.isFile()) {
+            String jsonString;
+            try {
+                char[] buf = new char[1024];
+
+                int numbread = 0;
+
+                StringBuffer buffer = new StringBuffer();
+                BufferedReader br = new BufferedReader(new FileReader(databseFile));
+                while ((numbread = br.read(buf)) != -1) {
+                    String data = String.valueOf(buf, 0, numbread);
+                    buffer.append(data);
+                }
+                br.close();
+                jsonString = buffer.toString();
+                try {
+                    ObjectMapper mapper = new ObjectMapper();
+                    mapper.setVisibility(PropertyAccessor.FIELD, JsonAutoDetect.Visibility.ANY);
+                    mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+                    database = mapper.readValue(jsonString, Database.class);
+
+                    Log.d("Database Json", database.toString());
+
+                    for (Airshow airshow : database.getAirshows()) {
+                        if (airshow != null)
+                            Log.d("Airshow", airshow.getName());
+                        /*if (airshow.getName().equals(strAirshowPrefered)) {
+                            Airshow(strAirshowPrefered, "Preference");*/
+                        }
+                    }
+
+
+
+
+                 catch (Exception E) {
+                    E.printStackTrace();
+                    LoadSplashPage();
+                }
+            } catch (Exception E) {
+                E.printStackTrace();
+                LoadSplashPage();
+            }
+
 
         //Checks if the files are present on the device
         if (Preference.isFile() && Update.isFile()) {
@@ -173,48 +216,7 @@ public class SplashPage extends AppCompatActivity {
                     }
                 }
 
-            if (databseFile.isFile()) {
-                String jsonString;
-                try {
-                    char[] buf = new char[1024];
 
-                    int numbread = 0;
-
-                    StringBuffer buffer = new StringBuffer();
-                    BufferedReader br = new BufferedReader(new FileReader(databseFile));
-                    while ((numbread = br.read(buf)) != -1) {
-                        String data = String.valueOf(buf, 0, numbread);
-                        buffer.append(data);
-                    }
-                    br.close();
-                    jsonString = buffer.toString();
-                    try {
-                        ObjectMapper mapper = new ObjectMapper();
-                        mapper.setVisibility(PropertyAccessor.FIELD, JsonAutoDetect.Visibility.ANY);
-                        mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-                        database = mapper.readValue(jsonString, Database.class);
-
-                        Log.d("Database Json", database.toString());
-
-                        for (Airshow airshow : database.getAirshows()) {
-                            if (airshow != null)
-                                Log.d("Airshow", airshow.getName());
-                                if (airshow.getName().equals(strAirshowPrefered)) {
-                                    Airshow(strAirshowPrefered, "Preference");
-                                }
-                        }
-
-
-
-
-                    } catch (Exception E) {
-                        E.printStackTrace();
-                        LoadSplashPage();
-                    }
-                } catch (Exception E) {
-                    E.printStackTrace();
-                    LoadSplashPage();
-                }
             } else
                 LoadSplashPage();
         } else

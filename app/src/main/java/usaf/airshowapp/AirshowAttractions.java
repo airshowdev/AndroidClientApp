@@ -88,10 +88,14 @@ public class AirshowAttractions extends AppCompatActivity {
         txtFood.setText("A list of vendors at " + Storage.getAirshowName());
         txtFood.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
 
-        /*TextView txtMap = findViewById(R.id.txtMap);
+        TextView txtMap = findViewById(R.id.txtMap);
         txtMap.setText("A map of the attractions at "+Storage.getAirshowName());
-        txtMap.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);*/
+        txtMap.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
         setTitle("Attractions");
+
+        Button btnMap = findViewById(R.id.Map);
+        btnMap.setOnClickListener(Map);
+
     }
 
 
@@ -129,7 +133,7 @@ public class AirshowAttractions extends AppCompatActivity {
         }
     };
 
-    /*View.OnClickListener Map = new View.OnClickListener() {
+    View.OnClickListener Map = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
             Intent Map = new Intent(context, AttractionsMap.class);
@@ -137,6 +141,6 @@ public class AirshowAttractions extends AppCompatActivity {
             setContentView(R.layout.layout_loading);
             setTitle("Loading...");
         }
-    };*/
+    };
 
 }

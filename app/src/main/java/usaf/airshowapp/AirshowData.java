@@ -118,11 +118,7 @@ public class AirshowData extends AppCompatActivity {
     View.OnClickListener Sponsors = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-            Intent Sponsor;
-            if (!Storage.getSponsors().equals("") && Storage.getSponsors() != null)
-                Sponsor = new Intent("android.intent.action.VIEW", Uri.parse(Storage.getSponsors()));
-            else
-                Sponsor = new Intent(conThis, usaf.airshowapp.Sponsors.class);
+            Intent Sponsor = new Intent(conThis, usaf.airshowapp.Sponsor.class);
             startActivity(Sponsor);
         }
     };
