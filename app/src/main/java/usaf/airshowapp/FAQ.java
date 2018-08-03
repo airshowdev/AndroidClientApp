@@ -10,6 +10,7 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import java.lang.reflect.Array;
@@ -32,6 +33,9 @@ public class FAQ extends AppCompatActivity {
         //ArrayList<String> Questions = Storage.getQuestions();
 
         Question[] Questions = Storage.getQnA();
+
+        ScrollView sv = new ScrollView(this);
+        sv.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
 
 
         //Declare a layout to put the question text views in
@@ -61,7 +65,9 @@ public class FAQ extends AppCompatActivity {
                 }
         }
         //Display the layout
-        setContentView(LL);
+
+            sv.addView(LL);
+        setContentView(sv);
 
 
 

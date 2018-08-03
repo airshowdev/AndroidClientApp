@@ -61,10 +61,10 @@ public class Settings extends AppCompatActivity {
         //Load the list of airshows
         //LoadAirshows.run();
 
-        ArrayList<String> Airshows = database.getAirshowNames();
+        //ArrayList<String> Airshows = database.getAirshowNames();
 
         //Set adapter for spinner
-        ArrayAdapter<String> AirshowAdapter = new ArrayAdapter<>(this, R.layout.spinner, Airshows);
+        //ArrayAdapter<String> AirshowAdapter = new ArrayAdapter<>(this, R.layout.spinner, Airshows);
         //spnPreference.setAdapter(AirshowAdapter);
 
         //Checks if setting file is a file and loads it if it is
@@ -97,7 +97,7 @@ public class Settings extends AppCompatActivity {
         }
 
         //Makes the preferred airshow show up in the spinner
-        int i = 0;
+       /* int i = 0;
         for (String strAirshow : Airshows)
         {
             if (strAirshow.equals(strPreference))
@@ -107,6 +107,7 @@ public class Settings extends AppCompatActivity {
             }
             i++;
         }
+        */
 
 
 
