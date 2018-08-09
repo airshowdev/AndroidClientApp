@@ -1,5 +1,6 @@
 package usaf.airshowapp;
 
+import android.os.StrictMode;
 import android.util.Log;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
@@ -23,6 +24,8 @@ import java.util.List;
 
 public class FirebaseConnection {
 
+
+    StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
     File json = new File(SplashPage.getCache() + "/database.json");
 
 
@@ -31,6 +34,8 @@ public class FirebaseConnection {
 
     public FirebaseConnection() {
         try {
+            StrictMode.setThreadPolicy(policy);
+
             URL jsonUrl = new URL("https://airshowapp-d193b.firebaseio.com/.json");
 
             if (!json.exists()) {
