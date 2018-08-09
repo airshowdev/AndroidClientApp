@@ -39,32 +39,6 @@ public class FirebaseConnection {
 
             FileUtils.copyURLToFile(jsonUrl, json);
 
-            /*char[] buf = new char[1024];
-
-            int numbread = 0;
-
-            StringBuffer buffer = new StringBuffer();
-            BufferedReader br = new BufferedReader(new FileReader(json));
-            while ((numbread = br.read(buf)) != -1) {
-                String data = String.valueOf(buf, 0, numbread);
-                Log.d("Data Read", data);
-                buffer.append(data);
-            }
-            br.close();
-            jsonString = buffer.toString();
-
-            try {
-                ObjectMapper mapper = new ObjectMapper();
-                mapper.setVisibility(PropertyAccessor.FIELD, JsonAutoDetect.Visibility.ANY);
-                mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-                database = mapper.readValue(jsonString, Database.class);
-
-                Log.d("JSON", jsonString);
-
-            } catch (Exception E) {
-                E.printStackTrace();
-            }*/
-
         } catch (Exception E) {
             E.printStackTrace();
         }
